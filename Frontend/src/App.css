@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding:  1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+main .left,
+main .right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.7rem;
+  padding: 1rem 2rem;
+}
+main .left{
+  background-color: black;
+  position: relative;
+  overflow: auto;
+}
+.code pre,
+.code pre code{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: black;
+  border-radius: 0.7rem;
+}
+.code Editor{
+   border: 1px solid black;
+  border-radius: 4px;
+}
+.code Editor:focus-within {
+  border: 2px solid #007BFF !important; /* blue border on focus */
+}
+.review{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: rgb(176, 176, 241);
+  color: black;
+  border-radius: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+main .right{
+  background-color: rgb(56, 55, 55);
+  overflow: auto;
+}
