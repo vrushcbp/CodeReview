@@ -23,7 +23,7 @@ function App() {
     setIsLoading(true);
     setReview("");
     try {
-      const response = await axios.post("https://codereview-zbow.onrender.com", {
+      const response = await axios.post("https://codereview-zbow.onrender.com/ai/get-response", {
         code,
       });
       setReview(response?.data?.candidates[0]?.content?.parts[0]?.text);
