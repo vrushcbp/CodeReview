@@ -23,7 +23,7 @@ function App() {
     setReview("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/ai/get-response",
+        "https://codereview-zbow.onrender.com/ai/get-response",
         {
           code,
         }
