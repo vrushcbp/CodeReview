@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -8,49 +9,83 @@ body,
 #root {
   height: 100%;
   width: 100%;
+  font-family: sans-serif;
+  background-color: #121212;
+  color: white;
 }
 
-main {
-  height: 100%;
-  width: 100%;
-  padding:  1.5rem;
-  display: flex;
-  gap: 1rem;
-}
-main .left,
-main .right {
-  height: 100%;
-  width: 50%;
+/* Page Layout */
+.page {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  border-radius: 0.7rem;
-  padding: 1rem 2rem;
-}
-main .left{
-  background-color: black;
-  position: relative;
-  overflow: auto;
-}
-.code pre,
-.code pre code{
   height: 100%;
   width: 100%;
-  margin: 0;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+}
+
+/* Main Section */
+main {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  overflow: hidden; /* prevents full page scroll */
+}
+
+/* Left Section - Code Editor */
+main .left {
   background-color: black;
   border-radius: 0.7rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
 }
-.code Editor{
-   border: 1px solid black;
-  border-radius: 4px;
+
+/* Right Section - Review */
+main .right {
+  background-color: rgb(56, 55, 55);
+  border-radius: 0.7rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
 }
+
+/* Code Editor */
+.code {
+  flex: 1;
+  overflow-y: auto;
+  background-color: black;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.code pre,
+.code pre code {
+  background-color: black;
+  color: white;
+}
+
+/* Editor focus style */
 .code Editor:focus-within {
-  border: 2px solid #007BFF !important; /* blue border on focus */
+  border: 2px solid #007bff !important;
 }
-.review{
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+
+/* Review Button */
+.review {
   padding: 0.5rem 2rem;
   background-color: rgb(176, 176, 241);
   color: black;
@@ -58,8 +93,21 @@ main .left{
   font-weight: 500;
   cursor: pointer;
   user-select: none;
+  align-self: flex-end;
+  margin-top: 1rem;
 }
-main .right{
-  background-color: rgb(56, 55, 55);
-  overflow: auto;
+
+/* Header in sections */
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #ccc;
 }
